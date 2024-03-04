@@ -1,0 +1,93 @@
+{
+  "users": {
+    "data":{
+    "LoginTime":[
+      {
+          "time": "2023-12-02",
+          "name": "陈凯",
+          "addr": "成都天府四街1999"
+        },
+        {
+          "time": "2016-05-02",
+          "name": "王小虎",
+          "addr": "上海普陀区"
+        },{
+          "time": "2016-05-21",
+          "name": "王小虎",
+          "addr": "上海普陀区"
+        },{
+          "time": "2016-06-02",
+          "name": "王小虎",
+          "addr": "上海普陀区"
+        },{
+          "time": "2016-05-02",
+          "name": "王小虎",
+          "addr": "上海普陀区"
+        },{
+          "time": "2016-05-02",
+          "name": "王小虎",
+          "addr": "上海普陀区"
+        },{
+          "time": "2016-05-02",
+          "name": "王小虎",
+          "addr": "上海普陀区"
+        },{
+          "time": "2016-05-02",
+          "name": "王小虎",
+          "addr": "上海普陀区"
+        },{
+          "time": "2016-05-02",
+          "name": "王小虎",
+          "addr": "上海普陀区"
+        },{
+          "time": "2016-05-02",
+          "name": "王小虎",
+          "addr": "上海普陀区"
+        }
+    ],
+    "tableDataprop":{
+      "name": "姓名",
+      "time": "时间",
+      "addr": "地址"
+    },
+    "countData":[
+      {
+          "name": "今日支付订单",
+          "value": "1224",
+          "icon": "success",
+          "color": "#2ec7c9"
+        },
+        {
+          "name": "今日收藏订单",
+          "value": "2110",
+          "icon": "star-on",
+          "color": "#ffb980"
+        },
+        {
+          "name": "今日未支付订单",
+          "value": "1034",
+          "icon": "s-goods",
+          "color": "#5ab1ef"
+        },
+        {
+          "name": "本月支付订单",
+          "value": "1234",
+          "icon": "success",
+          "color": "#2ec7c9"
+        },
+        {
+          "name": "本月收藏订单",
+          "value": "210",
+          "icon": "star-on",
+          "color": "#ffb980"
+        },
+        {
+          "name": "本月未支付订单",
+          "value": "8334",
+          "icon": "s-goods",
+          "color": "#5ab1ef"
+        }
+    ]
+  }
+}
+}
