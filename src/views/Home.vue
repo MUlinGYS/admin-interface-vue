@@ -20,25 +20,15 @@
       </el-card>
       <el-card style="margin-top: 20px; height: auto">
         <el-table :data="tableData" style="width: 100%">
-          <el-table-column
-            v-for="(val, key) in tableDatatwo"
-            :prop="key"
-            :label="val"
-            :key="key">
+          <el-table-column v-for="(val, key) in tableDatatwo" :prop="key" :label="val" :key="key">
           </el-table-column>
         </el-table>
       </el-card>
     </el-col>
     <el-col :span="16" style="padding-left: 10px">
       <div class="num">
-        <el-card
-          v-for="item in countData"
-          :key="item.value"
-          :body-style="{ display: 'flex', padding: 0 }">
-          <i
-            class="icon"
-            :class="`el-icon-${item.icon}`"
-            :style="{ background: item.color }"></i>
+        <el-card v-for="item in countData" :key="item.value" :body-style="{ display: 'flex', padding: 0 }">
+          <i class="icon" :class="`el-icon-${item.icon}`" :style="{ background: item.color }"></i>
           <div class="detail">
             <p class="price">￥{{ item.value }}</p>
             <p class="desc">{{ item.name }}</p>
@@ -60,34 +50,23 @@
       <!-- 管理员记录 -->
 
       <el-card class="guan">
-        <div
-          style="background-color: #dff0d8; padding: 20px; border-radius: 5px">
+        <div style="background-color: #dff0d8; padding: 20px; border-radius: 5px">
           <div style="font-size: 25px; font-weight: 600; color: #3f7840">
             管理员记录
           </div>
-          <div
-            style="color: #3f7840; font-size: 14px; padding: 5px 0px 5px 0px">
+          <div style="color: #3f7840; font-size: 14px; padding: 5px 0px 5px 0px">
             记录管理实操
           </div>
 
-          <el-input
-            placeholder="请输入管理记录"
-            v-model="input1"
-            size="mini"
-            @keyup.enter.native="inputEnter">
+          <el-input placeholder="请输入管理记录" v-model="input1" size="mini" @keyup.enter.native="inputEnter">
             <template slot="prepend">内容</template>
-            <el-button slot="append" type="primary" @click="inputData"
-              >确认</el-button
-            >
+            <el-button slot="append" type="primary" @click="inputData">确认</el-button>
           </el-input>
         </div>
 
         <div>
           <ul style="padding-inline-start: 0px">
-            <li
-              v-for="(item, index) in items"
-              :key="index"
-              class="list-item"
+            <li v-for="(item, index) in items" :key="index" class="list-item"
               style="padding: 10px 25px; font-size: 12px">
               <span style="padding-right: 25px">{{ index + 1 }}.</span>
               <span>{{ item }}</span>
@@ -122,13 +101,99 @@ export default {
     return {
       isCollapse: true,
       tableData: [
+        // {
+        //   name: '',
+        //   time: '',
+        // },
+        //离线数据
         {
-          name: '',
-          time: '',
+          time: "2023-12-02",
+          name: "陈凯",
+          addr: "成都天府四街1999"
         },
+        {
+          "time": "2016-05-02",
+          "name": "王小虎",
+          "addr": "上海普陀区"
+        }, {
+          "time": "2016-05-21",
+          "name": "王小虎",
+          "addr": "上海普陀区"
+        }, {
+          "time": "2016-06-02",
+          "name": "王小虎",
+          "addr": "上海普陀区"
+        }, {
+          "time": "2016-05-02",
+          "name": "王小虎",
+          "addr": "上海普陀区"
+        }, {
+          "time": "2016-05-02",
+          "name": "王小虎",
+          "addr": "上海普陀区"
+        }, {
+          "time": "2016-05-02",
+          "name": "王小虎",
+          "addr": "上海普陀区"
+        }, {
+          "time": "2016-05-02",
+          "name": "王小虎",
+          "addr": "上海普陀区"
+        }, {
+          "time": "2016-05-02",
+          "name": "王小虎",
+          "addr": "上海普陀区"
+        }, {
+          "time": "2016-05-02",
+          "name": "王小虎",
+          "addr": "上海普陀区"
+        }
       ],
-      tableDatatwo: {},
-      countData: [],
+      tableDatatwo: {
+        //离线数据
+        name: "姓名",
+        time: "时间",
+        addr: "地址"
+      },
+      countData: [
+        // 离线数据
+        {
+          "name": "今日支付订单",
+          "value": "1224",
+          "icon": "success",
+          "color": "#2ec7c9"
+        },
+        {
+          "name": "今日收藏订单",
+          "value": "2110",
+          "icon": "star-on",
+          "color": "#ffb980"
+        },
+        {
+          "name": "今日未支付订单",
+          "value": "1034",
+          "icon": "s-goods",
+          "color": "#5ab1ef"
+        },
+        {
+          "name": "本月支付订单",
+          "value": "1234",
+          "icon": "success",
+          "color": "#2ec7c9"
+        },
+        {
+          "name": "本月收藏订单",
+          "value": "210",
+          "icon": "star-on",
+          "color": "#ffb980"
+        },
+        {
+          "name": "本月未支付订单",
+          "value": "8334",
+          "icon": "s-goods",
+          "color": "#5ab1ef"
+        }
+      ],
 
       // 记事本
       items: ['12.26-訂單數據已完成'],
@@ -139,13 +204,13 @@ export default {
     this.fetchData()
   },
   methods: {
-    fetchData() {
-      instance('/users').then((response) => {
-        this.tableData = response.data.LoginTime
-        this.tableDatatwo = response.data.tableDataprop
-        this.countData = response.data.countData
-      })
-    },
+    // fetchData() {
+    //   instance('/users').then((response) => {
+    //     this.tableData = response.data.LoginTime
+    //     this.tableDatatwo = response.data.tableDataprop
+    //     this.countData = response.data.countData
+    //   })
+    // },
 
     // 记事本
     inputData() {
@@ -275,6 +340,7 @@ export default {
   padding-bottom: 20px;
   margin-bottom: 20px;
   border-bottom: 1px solid #ccc;
+
   img {
     margin-right: 40px;
     height: 150px;
@@ -288,6 +354,7 @@ export default {
     font-size: 32px;
     margin-bottom: 10px;
   }
+
   .access {
     color: #999999;
   }
@@ -299,6 +366,7 @@ export default {
     font-size: 14px;
     color: #999999;
     margin-left: 10px;
+
     span {
       color: #666666;
       margin-left: 60px;
@@ -320,6 +388,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
   .icon {
     width: 80px;
     height: 80px;
@@ -328,23 +397,27 @@ export default {
     line-height: 80px;
     color: #fff;
   }
+
   .detail {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-left: 15px;
+
     .price {
       font-size: 30px;
       margin-bottom: 10px;
       line-height: 30px;
       height: 30px;
     }
+
     .desc {
       font-size: 14px;
       color: #999;
       text-align: center;
     }
   }
+
   .el-card {
     width: 32%;
     margin-bottom: 20px;
@@ -362,6 +435,7 @@ export default {
   margin-top: 20px;
   height: auto;
 }
+
 .list-item {
   border-bottom: 1px dashed #ccc;
   list-style-type: none;
