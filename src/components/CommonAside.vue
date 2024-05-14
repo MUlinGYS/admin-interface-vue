@@ -13,7 +13,8 @@
       @click="clickMenu(item)"
       v-for="item in noChildren"
       :key="item.name"
-      :index="item.name">
+      :index="item.name"
+      :disabled="index === 2">
       <i :class="`el-icon-${item.icon}`"></i>
       <span slot="title">{{ item.label }}</span>
     </el-menu-item>

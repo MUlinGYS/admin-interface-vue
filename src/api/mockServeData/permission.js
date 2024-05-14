@@ -16,13 +16,13 @@ export default {
               icon: 's-home',
               url: 'Home.vue'
             },
-            {
-              path: '/mall',
-              name: 'mall',
-              label: '商品管理',
-              icon: 'video-play',
-              url: 'Mall.vue'
-            },
+            // {
+            //   path: '/mall',
+            //   name: 'mall',
+            //   label: '商品管理',
+            //   icon: 'video-play',
+            //   url: 'Mall.vue'
+            // },
             {
               path: '/user',
               name: 'user',
@@ -31,8 +31,8 @@ export default {
               url: 'User.vue'
             },
             {
-              label: '其他',
-              icon: 'location',
+              label: '商品管理',
+              icon: 'video-play',
               children: [
                 {
                   path: '/page1',
